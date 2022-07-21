@@ -1,7 +1,6 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-const { dirname } = require("path");
 const notes = JSON.parse(fs.readFileSync('db/db.json', 'utf8')); 
 
 let app = express();
@@ -23,4 +22,9 @@ app.get("/", (req, res) => {
 
 app.get("/notes", (req, res) => {
   res.sendFile(path.join(__dirname, "./pubic/notes.html"));
+});
+
+app.get("/api/notes", (req, res) => {
+  console.log(notes);
+  return res.json(notes);
 });
