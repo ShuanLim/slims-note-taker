@@ -42,7 +42,24 @@ app.post("/api/notes", (req, res) => {
 });
 
 
+// delete route
+app.delete("/api/nots/:id", (req, res) => {
+  let noteDelete = req.params.id;
+
+  for (let i = 0; i < notes.length; i++) {
+    if (noteDelete === notes[i].id) {
+      notes.splice(i, 1);
+      fs.writeFileSync("./db/db.json", JSON.stringify(notes));
+      return res.json(notes);
+    }
+  }
+  return res.json(false);
+});
+
+
 // starts server 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
 });
+
+
