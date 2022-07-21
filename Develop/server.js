@@ -28,3 +28,15 @@ app.get("/api/notes", (req, res) => {
   console.log(notes);
   return res.json(notes);
 });
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./public/index.html"));
+});
+
+app.post("/api/notes", (req, res) => {
+  let newNote = req.body;
+  newNote.id = createId();
+  notes.push(newNote);
+  fs.writeFileSync("./db/db.json", JSON.stringify(notes));
+  res.json(notes);
+});
