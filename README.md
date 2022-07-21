@@ -60,6 +60,8 @@ npm start
 
 ## Screenshot
 
+<img width="1032" alt="Screen Shot 2022-07-20 at 8 51 03 PM" src="https://user-images.githubusercontent.com/79289373/180128212-e75ebb19-9896-4e89-836e-46e91a471be1.png">
+
 ## Contributions
 
 <a href='https://github.com/ShuanLim'>Shuan Lim</a>
