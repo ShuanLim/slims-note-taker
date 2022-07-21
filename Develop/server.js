@@ -40,3 +40,9 @@ app.post("/api/notes", (req, res) => {
   fs.writeFileSync("./db/db.json", JSON.stringify(notes));
   res.json(notes);
 });
+
+
+// starts server 
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+});
